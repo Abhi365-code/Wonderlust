@@ -1,0 +1,104 @@
+/* ---------- GLOBAL MOBILE FIX ---------- */
+
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.navbar-collapse {
+  padding-top: 0.8rem;
+}
+
+/* ---------- SEARCH BAR ---------- */
+
+.search-bar {
+  width: 100%;
+}
+
+.search-bar input {
+  font-size: 14px;
+}
+
+/* ---------- FILTER ICONS ---------- */
+
+#filters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.filters {
+  font-size: 12px;
+}
+
+.filters i {
+  font-size: 18px;
+}
+
+/* ---------- CARDS ---------- */
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 0.6rem 0.8rem;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- MAP ---------- */
+
+#map {
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+
+/* ---------- FORMS ---------- */
+
+form {
+  font-size: 14px;
+}
+
+input, textarea, button {
+  border-radius: 10px;
+}
+
+/* ---------- MOBILE SPACING ---------- */
+
+.section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+/* ---------- CARD RESPONSIVENESS ---------- */
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #filters {
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: auto;
+  }
+}
+

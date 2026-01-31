@@ -1,0 +1,247 @@
+/* ---------- GLOBAL ---------- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem 0;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+  height: 5rem;
+  background-color: white;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+/* MOBILE NAV FIX */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: white;
+    padding: 1rem 1.2rem;
+    margin-top: 0.7rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.7rem 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navbar-nav .nav-link:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ---------- SEARCH BAR ---------- */
+
+.search-bar-hover:hover {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transform: translateY(-1px);
+  transition: all 0.25s ease;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  background-color: #f8f9fa;
+}
+
+/* ---------- CARDS ---------- */
+
+.card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 1.5rem !important;
+  width: 100%;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/* ---------- FORMS ---------- */
+
+.add-btn, .edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+  color: white !important;
+}
+
+.add-btn:hover, .edit-btn:hover {
+  opacity: 0.85;
+}
+
+/* ---------- SHOW PAGE ---------- */
+
+.listing-show-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.listing-show-img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 340px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.listing-desc {
+  color: #444;
+  line-height: 1.6;
+}
+
+@media (max-width: 576px) {
+  .listing-show-img {
+    max-height: 220px;
+  }
+}
+
+/* ---------- REVIEWS ---------- */
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.review-rating {
+  color: #f4b400;
+  font-weight: 600;
+}
+
+.btn-delete {
+  background: #1f2933;
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- MAP ---------- */
+
+#map {
+  height: 350px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  background: #eee;
+}
+
+/* ---------- FOOTER (NEW STRUCTURED) ---------- */
+
+.site-footer {
+  background: #f7f7f7;
+  border-top: 1px solid #ddd;
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-box {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-socials i {
+  font-size: 1.8rem;
+  margin: 0 1rem;
+  cursor: pointer;
+  color: #444;
+  transition: 0.25s;
+}
+
+.footer-socials i:hover {
+  color: #e63946;
+  transform: scale(1.15);
+}
+
+.footer-brand {
+  margin: 1.5rem 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.footer-links a {
+  text-decoration: none;
+  margin: 0 0.8rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+

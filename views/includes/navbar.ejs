@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <!-- LEFT LINKS -->
+      <div class="navbar-nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/listing">All Listings</a>
+      </div>
+
+      <!-- CENTER SEARCH BAR -->
+       <%
+          const showSearch =
+          currentPath === "/listing" ||
+          currentPath === "/listing/" ||
+          currentPath === "/listing/search";
+       %>
+    
+   <% if (showSearch) { %>
+    <form action="/listing/search"
+      method="GET"
+      class="d-none d-lg-flex mx-auto w-50 justify-content-center">
+     <div class="input-group shadow rounded-pill overflow-hidden search-bar-hover">
+
+     <div class="form-floating flex-fill">
+      <input type="text" name="location" id="where" class="form-control border-0" placeholder="Where">
+      <label for="where">Where</label>
+     </div>
+
+    <span class="vr my-2"></span>
+
+    <div class="form-floating flex-fill">
+      <input type="text" class="form-control border-0" placeholder="When" disabled>
+      <label>When</label>
+    </div>
+
+    <span class="vr my-2"></span>
+
+    <div class="form-floating flex-fill">
+      <input type="number" class="form-control border-0" placeholder="Who" disabled>
+      <label>Who</label>
+    </div>
+
+    <button class="btn btn-danger rounded-circle m-2">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
+  </div>
+ </form>
+      <% } %>
+      <!-- RIGHT LINKS -->
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listing/new">Add new listing</a>
+
+        <% if(!currUser) { %>
+          <a class="nav-link" href="/signUp">Sign Up</a>
+          <a class="nav-link" href="/login">Log In</a>
+        <% } %>
+
+        <% if(currUser) { %>
+          <a class="nav-link" href="/logout">Log Out</a>
+        <% } %>
+      </div>
+
+    </div>
+  </div>
+</nav>
+<!--SPECILLAY FOR MOBILE SEARCH BAR-->
+<% if (showSearch) { %>
+<div class="container d-lg-none mt-3">
+  <form action="/listing/search" method="GET">
+    <div class="input-group shadow rounded-pill overflow-hidden">
+
+      <input type="text" 
+             name="location"
+             class="form-control border-0 px-3"
+             placeholder="Search destination...">
+
+      <button class="btn btn-danger rounded-circle m-1">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </form>
+</div>
+<% } %>
+

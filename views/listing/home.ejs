@@ -1,0 +1,119 @@
+<% layout("/layouts/boilerplate") %>
+
+<!-- HERO SECTION -->
+<section class="px-3 px-md-5 py-5 text-center text-white rounded-4 mb-5"
+  style="background: linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+         url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;">
+
+  <div class="container py-5">
+    <h1 class="fw-bold display-6 display-md-5">Find your next stay with Wanderlust</h1>
+    <p class="lead mt-3">Discover stays, experiences and places you’ll love.</p>
+    <a href="/listing" class="btn btn-danger btn-lg mt-3 px-4">Explore Now</a>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="mb-5">
+      <div class="container">
+  <h3 class="mb-4 text-center">Explore by category</h3>
+
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+
+    <div class="text-center">
+      <i class="fa-solid fa-fire fa-2x mb-2 text-danger"></i>
+      <p>Trending</p>
+    </div>
+
+    <div class="text-center">
+      <i class="fa-solid fa-mountain fa-2x mb-2 text-success"></i>
+      <p>Hills</p>
+    </div>
+
+    <div class="text-center">
+      <i class="fa-solid fa-umbrella-beach fa-2x mb-2 text-warning"></i>
+      <p>Beach</p>
+    </div>
+
+    <div class="text-center">
+      <i class="fa-solid fa-hotel fa-2x mb-2 text-primary"></i>
+      <p>Hotels</p>
+    </div>
+
+    <div class="text-center">
+      <i class="fa-solid fa-people-roof fa-2x mb-2 text-info"></i>
+      <p>Family</p>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- FEATURED LISTINGS -->
+<section class="mb-5">
+  <h3 class="mb-4 text-center">Featured stays</h3>
+
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+
+    <% allListing.slice(0,6).forEach(listing => { %>
+
+      <div class="col">
+        <a href="/listing/<%= listing._id %>" class="text-decoration-none text-dark">
+
+          <div class="card h-100 shadow-sm">
+            <img src="<%= listing.image.url %>" class="card-img-top"
+                 style="height:220px; object-fit:cover;">
+
+            <div class="card-body">
+              <h5 class="card-title"><%= listing.title %></h5>
+              <p class="card-text text-muted">
+                <%= listing.location %>, <%= listing.country %>
+              </p>
+              <p><b>₹ <%= listing.price.toLocaleString("en-IN") %></b> / night</p>
+            </div>
+          </div>
+
+        </a>
+      </div>
+
+    <% }) %>
+
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="/listing" class="btn btn-outline-dark px-4">View all listings</a>
+  </div>
+</section>
+
+<!-- WHY WANDERLUST -->
+<section class="mb-5">
+  <h3 class="mb-4 text-center">Why Wanderlust?</h3>
+
+  <div class="row text-center">
+
+    <div class="col-md-4 mb-3">
+      <i class="fa-solid fa-shield-halved fa-2x mb-2 text-success"></i>
+      <h5>Secure bookings</h5>
+      <p class="text-muted">Verified listings and trusted hosts.</p>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <i class="fa-solid fa-map-location-dot fa-2x mb-2 text-danger"></i>
+      <h5>Smart locations</h5>
+      <p class="text-muted">Maps, search and filters for easy planning.</p>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <i class="fa-solid fa-tags fa-2x mb-2 text-primary"></i>
+      <h5>Best prices</h5>
+      <p class="text-muted">Affordable stays across the world.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="p-5 text-center bg-light rounded-4">
+  <h3 class="fw-bold">Ready to start your journey?</h3>
+  <p class="text-muted">Create an account and explore amazing places.</p>
+  <a href="/listing" class="btn btn-danger px-4">Start exploring</a>
+</section>

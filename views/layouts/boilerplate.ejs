@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>wanderlust</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons / Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- YOUR custom CSS (after Bootstrap so it overrides) -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <link rel="stylesheet" href="/css/rating.css" />
+
+  <!-- map link -->
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  
+ <link rel="stylesheet" href="/css/responsive.css">
+
+  <style>
+    /* quick fallback to ensure font shows even if style.css missing */
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+  </style>
+</head>
+<body>
+  <%- include("../includes/navbar.ejs") %>
+
+  <!-- page body -->
+  <main class="py-4">
+    <div class="container">
+       <%- include("../includes/flash.ejs") %>
+      <%- body %>
+    </div>
+  </main>
+
+  <%- include("../includes/footer.ejs") %>
+
+  <!-- Bootstrap JS (bundle includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+  <script src="/js/map.js"></script>
+
+  <!-- Optional: small script to confirm stylesheet loaded (for debugging) -->
+  <script>
+    (function(){
+      const link = document.querySelector('link[href="/css/style.css"]');
+      if (!link) console.warn('Custom stylesheet /css/style.css not found in DOM');
+    })();
+  </script>
+  <script src="/js/script.js"></script>
+

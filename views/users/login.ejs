@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card shadow-lg border-0 rounded-4 p-4" style="max-width: 420px; width:100%;">
+    
+    <div class="text-center mb-4">
+      <i class="fa-regular fa-compass fa-2x text-danger mb-2"></i>
+      <h3 class="fw-bold">Welcome Back</h3>
+      <p class="text-muted mb-0">Login to your Wanderlust account</p>
+    </div>
+
+    <form action="/login" method="POST" class="needs-validation" novalidate>
+
+      <div class="form-floating mb-3">
+        <input 
+          id="username" 
+          name="username" 
+          type="text" 
+          class="form-control rounded-3" 
+          placeholder="Username"
+          required
+        >
+        <label for="username">Username</label>
+        <div class="invalid-feedback">Please enter your username</div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input 
+          id="password" 
+          name="password" 
+          type="password" 
+          class="form-control rounded-3" 
+          placeholder="Password"
+          required
+        >
+        <label for="password">Password</label>
+        <div class="invalid-feedback">Please enter your password</div>
+      </div>
+
+      <button class="btn btn-danger w-100 py-2 rounded-pill fw-semibold mt-2">
+        Log In
+      </button>
+
+    </form>
+
+    <div class="text-center mt-3">
+      <small class="text-muted">
+        Don’t have an account?
+        <a href="/signup" class="text-danger fw-semibold text-decoration-none">Sign up</a>
+      </small>
+    </div>
+
+  </div>
+</div>
