@@ -31,10 +31,13 @@ module.exports.isOwner= async(req,res,next) =>{
     return res.redirect("/listing");
   }
   // OWNER CHECK FIRST
-  if (!foundListing.owner.equals(res.locals.currUser._id)) {
-    req.flash("error", "You are not the owner. You are not able to update or delete!.");
-    return res.redirect(`/listing/${id}`);
-  }
+  if (foundListing.owner.toString() !== res.locals.currUser._id.toString()) {
+  req.flash(
+    "error",
+    "You are not the owner. You are not able to update or delete!"
+  );
+  return res.redirect(`/listing/${id}`);
+}
   next();
 };
 
